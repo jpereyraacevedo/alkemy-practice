@@ -1,8 +1,8 @@
 import axios from "axios";
 import swal from "@sweetalert/with-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 
-import "./Login.css"
+import "./Login.css";
 
 export const Login = () => {
   // Redireccion con useNavigate
@@ -66,8 +66,11 @@ export const Login = () => {
         nuevoLink("/listado");
       });
   };
+  // Token obtenido del localStorage para luego renderizar el componente o redirigirlo
+  let tokenSaved = localStorage.getItem("token");
   return (
     <>
+      {tokenSaved && <Navigate to="/listado" />}
       <div className="container my-5 login">
         <h2>Login</h2>
         <hr />

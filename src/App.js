@@ -3,6 +3,7 @@ import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { List } from "./components/List/List";
 import { Login } from "./components/Login/Login";
+import { Detail } from "./components/Detail/Detail";
 // Styles
 import "./App.css"
 import "./bootstrap.min.css";
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Login />} />
           <Route path="/listado" element={<List />} />
+          <Route path="/detail" element={<Detail />} />
         </Routes>
         <Footer />
       </div>
