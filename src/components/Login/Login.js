@@ -61,13 +61,13 @@ export const Login = () => {
       .post("http://challenge-react.alkemy.org", { email, password })
       .then((res) => {
         const tokenReceived = res.data.token;
-        localStorage.setItem("token", tokenReceived);
+        sessionStorage.setItem("token", tokenReceived);
         // Redireccion con useNavigate
         nuevoLink("/listado");
       });
   };
-  // Token obtenido del localStorage para luego renderizar el componente o redirigirlo
-  let tokenSaved = localStorage.getItem("token");
+  // Token obtenido del sessionStorage para luego renderizar el componente o redirigirlo
+  let tokenSaved = sessionStorage.getItem("token");
   return (
     <>
       {tokenSaved && <Navigate to="/listado" />}

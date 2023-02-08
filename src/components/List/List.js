@@ -5,7 +5,7 @@ import axios from "axios";
 import "./List.css"
 
 export const List = () => {
-  let tokenSaved = localStorage.getItem("token");
+  let tokenSaved = sessionStorage.getItem("token");
   const [moviesList, setMoviesList] = useState([]);
 
   useEffect(() => {

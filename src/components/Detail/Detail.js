@@ -5,7 +5,7 @@ import swal from "@sweetalert/with-react";
 import "./Detail.css";
 
 export const Detail = () => {
-  let tokenSaved = localStorage.getItem("token");
+  let tokenSaved = sessionStorage.getItem("token");
 
   let [movie, setMovie] = useState(null);
 
@@ -29,8 +29,8 @@ export const Detail = () => {
       {!movie && <h2>Cargando ...</h2>}
       {movie && (
         <div className="container py-5">
-          <h1> { movie.title } </h1>
-          <img src= { `https://image.tmdb.org/t/p/w500${movie.poster_path }`} />
+          <h1> {movie.title} </h1>
+          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
         </div>
       )}
     </div>

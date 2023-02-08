@@ -1,26 +1,29 @@
 import { Link } from "react-router-dom";
-
-import Logo from "./../../images/logo-white.png"
+import { SearchBar } from "../SearchBar/SearchBar";
+import Logo from "./../../images/logo-white.png";
 // Styles
-import "./Header.css"
+import "./Header.css";
 
 export const Header = () => {
   return (
     <header className="header">
-      <img src={Logo} alt="#" className="logo" />
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/listado">Listado</Link>
-          </li>
-          <li>
-            <Link to="/contacto">Contacto</Link>
-          </li>
-        </ul>
-      </nav>
+      <div class="navBar">
+        <img src={Logo} alt="#" className="logo" />
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/listado">Listado</Link>
+            </li>
+            <li>
+              <Link to="/contacto">Contacto</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <SearchBar />
     </header>
   );
 };
