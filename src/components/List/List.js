@@ -4,7 +4,7 @@ import swal from "@sweetalert/with-react";
 import axios from "axios";
 import "./List.css"
 
-export const List = () => {
+export const List = ( {favoriteToggle} ) => {
   let tokenSaved = sessionStorage.getItem("token");
   const [moviesList, setMoviesList] = useState([]);
 
@@ -35,6 +35,7 @@ export const List = () => {
               <div className="col-3 my-5 card-style" key={key}>
                 <div className="card">
                   <img src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`} className="card-img-top" alt="..." />
+                  <button className="favorite-btn" onClick={favoriteToggle} data-movie-id={movies.id} >F</button>
                   <div className="card-body">
                     <h5 className="card-title">{movies.title.substring(0, 50)}</h5>
                     <p className="card-text">

@@ -20,6 +20,9 @@ export const Header = () => {
             <li>
               <Link to="/contacto">Contacto</Link>
             </li>
+            <li>
+              <Link to="/favorites">Favoritos</Link>
+            </li>
           </ul>
         </nav>
       </div>
